@@ -72,7 +72,7 @@ app.get("/funcionarios", async (req, res) => {
             database: process.env.dbname ? process.env.dbname : "test",
             port: process.env.dbport ? parseInt(process.env.dbport) : 3306
         })
-        const [result, fields] = await connection.query("SELECT * from funcionarios")
+        const [result, fields] = await connection.query("SELECT * from funcionario")
         await connection.end()
         res.send(result)
     } catch (e) {
